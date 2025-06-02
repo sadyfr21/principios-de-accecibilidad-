@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style> 
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+        background-color: #f4f4f4;
+        color: #333;
+    }
+    h1 {
+        color: #2c3e50;
+    }
+    p, ul {
+        margin-bottom: 20px;
+    }
+    ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+    li {
+        margin-bottom: 10px;
+    }
+    strong {
+        color: #2980b9;
+    }
+    a {
+        color: #2980b9;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    h1, h2, h3 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    h3 {
+        font-size: 18px;
+    }
+    p {
+        font-size: 16px;
+    }
+    ul li {
+        font-size: 16px;
+    }
+    @media (max-width: 600px) {
+        body {
+            margin: 10px;
+        }
+        h1 {
+            font-size: 20px;
+        }
+        h2 {
+            font-size: 18px;
+        }
+        h3 {
+            font-size: 16px;
+        }
+        p, ul li {
+            font-size: 14px;
+        }
+    }
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+        }
+        h1, h2, h3 {
+            color: #ecf0f1;
+        }
+        strong {
+            color: #3498db;
+        }
+        a {
+            color: #3498db;
+        }
+    }
+    @media (prefers-color-scheme: light) {
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        strong {
+            color: #2980b9;
+        }
+        a {
+            color: #2980b9;
+        }
+    }
+    @media (max-width: 400px) {
+        body {
+            font-size: 14px;
+        }
+        h1 {
+            font-size: 18px;
+        }
+        h2 {
+            font-size: 16px;
+        }
+        h3 {
+            font-size: 14px;
+        }
+        p, ul li {
+            font-size: 12px;
+        }
+    }
+    @media (min-width: 1200px) {
+        body {
+            max-width: 1200px;
+            margin: auto;
+        }
+        h1 {
+            font-size: 28px;
+        }
+        h2 {
+            font-size: 24px;
+        }
+        h3 {
+            font-size: 20px;
+        }
+        p, ul li {
+            font-size: 18px;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 1199px) {
+        body {
+            max-width: 800px;
+            margin: auto;
+        }
+        h1 {
+            font-size: 26px;
+        }
+        h2 {
+            font-size: 22px;
+        }
+        h3 {
+            font-size: 18px;
+        }
+        p, ul li {
+            font-size: 16px;
+        }
+    }
+    @media (max-width: 767px) {
+        body {
+            max-width: 100%;
+            margin: 0;
+        }
+        h1 {
+            font-size: 22px;
+        }
+        h2 {
+            font-size: 20px;
+        }
+        h3 {
+            font-size: 16px;
+        }
+        p, ul li {
+            font-size: 14px;
+        }
+    }
+    @media (min-width: 992px) {
+        body {
+            max-width: 960px;
+            margin: auto;
+        }
+        h1 {
+            font-size: 30px;
+        }
+        h2 {
+            font-size: 26px;
+        }
+        h3 {
+            font-size: 22px;
+        }
+        p, ul li {
+            font-size: 20px;
+        }
+    }
+    @media (min-width: 576px) and (max-width: 991px) {
+        body {
+            max-width: 540px;
+            margin: auto;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        h2 {
+            font-size: 20px;
+        }
+        h3 {
+            font-size: 18px;
+        }
+        p, ul li {
+            font-size: 16px;
+        }
+    }
+    @media (max-width: 575px) {
+        body {
+            max-width: 100%;
+            margin: 0;
+        }
+        h1 {
+            font-size: 20px;
+        }
+        h2 {
+            font-size: 18px;
+        }
+        h3 {
+            font-size: 16px;
+        }
+        p, ul li {
+            font-size: 14px;
+        }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        body {
+            transition: none;
+        }
+        h1, h2, h3, p, ul li {
+            transition: none;
+        }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+        body {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        h1, h2, h3, p, ul li {
+            transition: color 0.3s ease;
+        }
+    }
+    @media (prefers-contrast: high) {
+        body {
+            background-color: #000;
+            color: #fff;
+        }
+        h1, h2, h3 {
+            color: #fff;
+        }
+        strong {
+            color: #ff0;
+        }
+        a {
+            color: #ff0;
+        }
+    }
+    @media (prefers-contrast: low) {
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        strong {
+            color: #2980b9;
+        }
+        a {
+            color: #2980b9;
+        }
+    }
+    
+</style>
+<body>
+    <h1>
+Principios de Accesibilidad Web</h1>
+    </h1>
+    <p>Los principios de accesibilidad web son fundamentales para garantizar que todas las personas, independientemente de sus capacidades, puedan acceder y utilizar la web. Estos principios incluyen:</p>
+    <ul>
+        <li><strong>Perceptible:</strong> La información y los componentes de la interfaz de usuario deben presentarse de manera que puedan ser percibidos por todos los usuarios.</li>
+        <li><strong>Operable:</strong> Los componentes de la interfaz de usuario y la navegación deben ser operables por todos los usuarios.</li>
+        <li><strong>Comprensible:</strong> La información y el funcionamiento de la interfaz de usuario deben ser comprensibles para todos los usuarios.</li>
+        <li><strong>Robusto:</strong> El contenido debe ser robusto para que pueda ser interpretado por una amplia variedad de agentes de usuario, incluidos los tecnologías de asistencia.</li>
+        <h1>
+     ¿El tamaño y tipo de fuente facilitan la lectura para personas con dificultades visuales?
+        
+
+
+        </h1>
+        <p>El tamaño y tipo de fuente son cruciales para la legibilidad. Fuentes sans-serif como Arial o Verdana suelen ser más fáciles de leer en pantallas. Un tamaño de fuente mínimo de 16px es recomendable, y el uso de un alto contraste entre el texto y el fondo mejora la accesibilidad para personas con dificultades visuales.</p>
+    </ul>
+    <h1> ¿Es intuitiva y clara la forma en que los usuarios interactúan con la maqueta?
+
+    </h1>
+    <p>Una interfaz intuitiva y clara es esencial para una buena experiencia de usuario. Esto incluye un diseño coherente, botones claramente etiquetados, y una navegación lógica. Las instrucciones deben ser claras y concisas, y los elementos interactivos deben ser fácilmente identificables.</p>
+    <h1>¿Se puede navegar y acceder a las funciones sin necesidad del mouse?
+
+    </h1>
+    <p>La navegación sin mouse es crucial para usuarios con discapacidades motoras. Esto se puede lograr mediante el uso de atajos de teclado, menús accesibles y un diseño que permita la navegación mediante teclado. Asegurarse de que todos los elementos interactivos sean accesibles a través del teclado es fundamental.</p>
+    <h1>¿Se pueden personalizar los colores y el contraste para adaptarse a las necesidades individuales?
+    </h1>
+    <p>La personalización de colores y contraste es importante para usuarios con discapacidades visuales. Proporcionar opciones para ajustar el esquema de color, el contraste y el tamaño del texto permite a los usuarios adaptar la interfaz a sus necesidades específicas. Esto puede incluir temas oscuros, ajustes de contraste alto, y opciones de personalización de fuentes.</p>
+        <h1>¿Las imágenes incluyen descripciones para personas con discapacidad visual?
+
+</h1>
+    <p>Las descripciones de imágenes, o "texto alternativo", son esenciales para usuarios con discapacidades visuales. Estas descripciones deben ser claras y concisas, proporcionando el contexto necesario para entender la imagen. Esto permite que los lectores de pantalla interpreten las imágenes y transmitan la información a los usuarios con discapacidades visuales.</p>
+    <h1>¿Los botones y enlaces tienen etiquetas descriptivas claras?
+
+</h1>
+    <p>Las etiquetas descriptivas en botones y enlaces son cruciales para la accesibilidad. Deben ser claras y específicas, indicando la acción que se realizará al hacer clic. Esto ayuda a todos los usuarios, incluidos aquellos que utilizan tecnologías de asistencia, a entender la función de cada elemento interactivo.</p>
+    <h1>¿El contenido multimedia tiene subtítulos y transcripciones?
+</h1>
+    <p>Los subtítulos y transcripciones son esenciales para hacer el contenido multimedia accesible a personas con discapacidades auditivas. Los subtítulos proporcionan una representación textual del audio, mientras que las transcripciones ofrecen un texto completo del contenido hablado. Esto asegura que todos los usuarios puedan acceder a la información presentada en videos y audios.</p>
+    <h1>¿Funciona correctamente en distintos dispositivos y tamaños de pantalla?
+
+</h1>
+    <p>La compatibilidad con diferentes dispositivos y tamaños de pantalla es crucial para la accesibilidad. Un diseño responsivo asegura que el contenido se adapte adecuadamente a pantallas de diferentes tamaños, desde teléfonos móviles hasta monitores de escritorio. Esto incluye la adaptación del diseño, la navegación y los elementos interactivos para garantizar una experiencia de usuario coherente en todas las plataformas.</p>
+        
+<h1>¿El contenido está redactado de manera comprensible para todos los usuarios?
+
+</h1>
+<p>La redacción del contenido debe ser clara y comprensible para todos los usuarios. Esto implica utilizar un lenguaje sencillo, evitar jerga técnica innecesaria, y estructurar el contenido de manera lógica. Además, el uso de encabezados, listas y párrafos cortos mejora la legibilidad y facilita la comprensión del contenido.</p>
+<h1>¿Se han realizado pruebas con herramientas de validación y usuarios reales?
+
+</h1>
+<p>Las pruebas con herramientas de validación y usuarios reales son fundamentales para garantizar la accesibilidad. Las herramientas de validación pueden identificar problemas técnicos, mientras que las pruebas con usuarios reales proporcionan información valiosa sobre la experiencia de usuario. Esto permite realizar ajustes y mejoras basadas en la retroalimentación directa de los usuarios.</p>
+<h1>¿Los videos cuentan con subtítulos y transcripciones accesibles?
+
+</h1>
+<p>Los videos deben incluir subtítulos y transcripciones accesibles para garantizar que las personas con discapacidades auditivas puedan acceder al contenido. Los subtítulos deben sincronizarse correctamente con el audio, y las transcripciones deben ser completas y precisas, proporcionando una representación textual del contenido hablado.</p>
+</body>
+</html>
